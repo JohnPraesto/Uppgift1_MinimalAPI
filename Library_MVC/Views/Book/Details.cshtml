@@ -1,0 +1,42 @@
+﻿@model Book
+
+<h1>Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(book => book.BookId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(book => book.BookId)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(book => book.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(book => book.Title)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(book => book.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(book => book.Author)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(book => book.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(book => book.Genre)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(book => book.IsAvailable)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(book => book.IsAvailable)
+        </dd>
+    </dl>
+</div>

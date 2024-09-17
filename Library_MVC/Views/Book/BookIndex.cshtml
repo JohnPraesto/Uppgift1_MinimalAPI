@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Book>
+
+    <h1>Library</h1>
+
+    <p>
+        <a asp-action="BookCreate" class="btn btn-outline-primary"><i class="fa fa-plus"></i>Register New Book</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(book => book.BookId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(book => book.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(book => book.Author)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(book => book.Published)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(book => book.Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(book => book.IsAvailable)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(bookItem => book.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(bookItem => book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(bookItem => book.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(bookItem => book.Published)
+                </td>
+                <td>
+                    @Html.DisplayFor(bookItem => book.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(bookItem => book.IsAvailable)
+                </td>
+
+                <td>
+                    <a asp-action="Details" class="btn btn-success" asp-route-id="@book.BookId">Details<i class="fade fa-edit"></i></a>
+                    <a asp-action="UpdateBook" class="btn btn-warning" asp-route-bookId="@book.BookId">Edit<i class="fa fa-edit"></i></a>
+                    <a asp-action="DeleteBook" class="btn btn-danger" asp-route-id="@book.BookId">Delete<i class="fade fa-trash"></i></a>
+                </td>
+
+            </tr>
+        }
+        </tbody>
+    </table>
