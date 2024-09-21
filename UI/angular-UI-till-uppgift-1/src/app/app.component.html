@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>ANGULAR till Uppgift 1</h1>
+  <div class="book-container">
+    <div class="book-form">
+      <form #form="ngForm"(ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="">Book Author</label>
+          <input type="text" name="author" [(ngModel)]="book.author">
+        </div>
+
+        <div class="form-group">
+          <label for="">Book Title</label>
+          <input type="text" name="title"[(ngModel)]="book.title">
+        </div>
+
+        <div class="form-group">
+          <label for="">Genre</label>
+          <input type="text" name="genre"[(ngModel)]="book.genre">
+        </div>
+
+        <div class="form-group">
+          <label for="">Published</label>
+          <input type="text" name="published"[(ngModel)]="book.published">
+        </div>
+
+          <!-- <div class="form-group">
+            <label for="">Genre</label>
+            <input type="text" name="genre">
+          </div> ISAVAILABLE ELLER?-->
+
+          <div class="form-group">
+            <button>Save</button>
+          </div>
+
+      </form>
+    </div>
+
+    <div class="book-grid">
+      <div class="book-row" *ngFor="let book of books">
+        <div (click)="populateForm(book)" class="book-row-details">
+          <span>{{book.title}}</span>
+          <span>{{book.author}}</span>
+        </div>
+        <div class="book-row-action">
+          <a (click)="onDelete(book.bookId)"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
